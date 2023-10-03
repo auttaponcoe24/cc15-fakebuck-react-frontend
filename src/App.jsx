@@ -1,14 +1,20 @@
+import { ToastContainer } from "react-toastify";
+import Loading from "./components/Loading";
+import { useAuth } from "./hooks/use-auth";
+import Route from "./router/Route";
 
 function App() {
+	const { initialLoading } = useAuth();
+	if (initialLoading) {
+		return <Loading />;
+	}
 
-
-  return (
-    <>
-      <h1 className="text-5xl text-orange-500 text-center font-bold">
-        Hello world!
-      </h1>
-    </>
-  )
+	return (
+		<>
+			<Route />
+			<ToastContainer position="bottom-center" autoClose={3000} />
+		</>
+	);
 }
 
-export default App
+export default App;
