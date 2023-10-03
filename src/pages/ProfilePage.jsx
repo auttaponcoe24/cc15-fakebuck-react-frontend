@@ -1,7 +1,11 @@
-import React from "react";
+import ProfileCover from "../features/profile/ProfileCover";
+import ProfileInfo from "../features/profile/ProfileInfo";
 
-function ProfilePage() {
-  return <div>ProfilePage</div>;
+export default function ProfilePage() {
+	return (
+		<div className="bg-gradient-to-b from-gray-300 to-white shadow pb-4">
+			<ProfileCover />
+			<ProfileInfo />
+		</div>
+	);
 }
-
-export default ProfilePage;
