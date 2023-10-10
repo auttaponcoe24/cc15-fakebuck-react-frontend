@@ -22,6 +22,7 @@ export default function Dropdown() {
 		document.addEventListener("click", handleClickOutside);
 		return () => document.removeEventListener("click", handleClickOutside);
 	}, []);
+
 	return (
 		<div className="relative" ref={dropdownEl}>
 			<div className="cursor-pointer" onClick={() => setIsOpen(!isopen)}>
